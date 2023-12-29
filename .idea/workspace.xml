@@ -4,11 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7023d99c-fb22-46a5-995a-4b6c5d900898" name="Changes" comment="Added Questions and Todo">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+    <list default="true" id="7023d99c-fb22-46a5-995a-4b6c5d900898" name="Changes" comment="Added name and class to questions">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP_CA3_Jake_O_Reilly.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CA3_Question1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CA3_Question1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CA3_Question10.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CA3_Question10.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CA3_Question2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CA3_Question2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CA3_Question3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CA3_Question3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CA3_Question4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CA3_Question4.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CA3_Question5.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CA3_Question5.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CA3_Question6.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CA3_Question6.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CA3_Question7.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CA3_Question7.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CA3_Question8.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CA3_Question8.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CA3_Question9.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CA3_Question9.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +49,7 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -64,7 +73,7 @@
       <updated>1703816575944</updated>
       <workItem from="1703816576966" duration="959000" />
       <workItem from="1703817598311" duration="735000" />
-      <workItem from="1703818446889" duration="79000" />
+      <workItem from="1703818446889" duration="365000" />
     </task>
     <task id="LOCAL-00001" summary="Initialised project.">
       <option name="closed" value="true" />
@@ -90,7 +99,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703817625719</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Renamed project">
+      <option name="closed" value="true" />
+      <created>1703818586984</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1703818586984</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -100,6 +117,8 @@
     <MESSAGE value="Initialised project." />
     <MESSAGE value="Added starter code" />
     <MESSAGE value="Added Questions and Todo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Questions and Todo" />
+    <MESSAGE value="Renamed project" />
+    <MESSAGE value="Added name and class to questions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added name and class to questions" />
   </component>
 </project>

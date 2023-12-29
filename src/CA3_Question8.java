@@ -1,7 +1,7 @@
 import java.util.Scanner;
 /**
- *  Name:
- *  Class Group:
+ *  Name: jake o'reilly
+ *  Class Group: gd2a
  */
 public class CA3_Question8 {
 
