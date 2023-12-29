@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7023d99c-fb22-46a5-995a-4b6c5d900898" name="Changes" comment="Initialised project." />
+    <list default="true" id="7023d99c-fb22-46a5-995a-4b6c5d900898" name="Changes" comment="Added starter code">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,6 +14,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 6
@@ -28,6 +33,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/jaked/IdeaProjects/OOP_CA3_Jake_O_Reilly",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -35,6 +41,12 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\jaked\IdeaProjects\OOP_CA3_Jake_O_Reilly" />
+      <recent name="C:\Users\jaked\IdeaProjects\OOP_CA3_Jake_O_Reilly\src" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -43,7 +55,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1703816575944</updated>
-      <workItem from="1703816576966" duration="458000" />
+      <workItem from="1703816576966" duration="959000" />
     </task>
     <task id="LOCAL-00001" summary="Initialised project.">
       <option name="closed" value="true" />
@@ -53,7 +65,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703816616638</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added starter code">
+      <option name="closed" value="true" />
+      <created>1703817250474</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1703817250474</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -61,6 +81,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initialised project." />
-    <option name="LAST_COMMIT_MESSAGE" value="Initialised project." />
+    <MESSAGE value="Added starter code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added starter code" />
   </component>
 </project>
