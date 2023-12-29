@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7023d99c-fb22-46a5-995a-4b6c5d900898" name="Changes" comment="Added starter code">
+    <list default="true" id="7023d99c-fb22-46a5-995a-4b6c5d900898" name="Changes" comment="Added Questions and Todo">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP_CA3_Jake_O_Reilly.iml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,9 +21,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2aCJM3MGf8XC3SdwZJqcwwyZPXJ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -38,6 +41,10 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -56,6 +63,8 @@
       <option name="presentableId" value="Default" />
       <updated>1703816575944</updated>
       <workItem from="1703816576966" duration="959000" />
+      <workItem from="1703817598311" duration="735000" />
+      <workItem from="1703818446889" duration="79000" />
     </task>
     <task id="LOCAL-00001" summary="Initialised project.">
       <option name="closed" value="true" />
@@ -73,7 +82,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703817250474</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added Questions and Todo">
+      <option name="closed" value="true" />
+      <created>1703817625719</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1703817625719</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -82,6 +99,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initialised project." />
     <MESSAGE value="Added starter code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added starter code" />
+    <MESSAGE value="Added Questions and Todo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Questions and Todo" />
   </component>
 </project>
