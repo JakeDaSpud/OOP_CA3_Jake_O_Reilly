@@ -135,7 +135,7 @@ Refer to description of algorithm (from textbook) in the accompanying PDF.
 Consider the problem of finding the least expensive routes to all cities in a network from a given
 starting point.
 
-IMAGE HERE
+<img src="q10_image.png">
 
 For example, in this network, the least expensive route from Pendleton to Peoria has cost 8
 (going through Pierre and Pueblo). The following helper class expresses the distance to
