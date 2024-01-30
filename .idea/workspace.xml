@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="7023d99c-fb22-46a5-995a-4b6c5d900898" name="Changes" comment="- Added image to doc&#10;- Did q1&#10;- Started q2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CA3_Question5.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CA3_Question5.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CA3_Question6.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CA3_Question6.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +64,7 @@
       <recent name="C:\Users\jaked\IdeaProjects\OOP_CA3_Jake_O_Reilly\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.CA3_Question1">
+  <component name="RunManager" selected="Application.CA3_Question5">
     <configuration name="CA3_Question1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="CA3_Question1" />
       <module name="OOP_CA3_jake_oreilly" />
@@ -77,8 +79,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CA3_Question5" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="CA3_Question5" />
+      <module name="OOP_CA3_jake_oreilly" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.CA3_Question5" />
         <item itemvalue="Application.CA3_Question1" />
         <item itemvalue="Application.CA3_Question2" />
       </list>
@@ -105,6 +115,9 @@
       <workItem from="1706267645588" duration="3155000" />
       <workItem from="1706286651328" duration="1707000" />
       <workItem from="1706521820190" duration="43000" />
+      <workItem from="1706607135393" duration="1029000" />
+      <workItem from="1706611252140" duration="2119000" />
+      <workItem from="1706616354837" duration="2654000" />
     </task>
     <task id="LOCAL-00001" summary="Initialised project.">
       <option name="closed" value="true" />

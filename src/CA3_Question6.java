@@ -18,23 +18,22 @@ public class CA3_Question6
     public static void main(String[] args) {
 
        Scanner in = new Scanner(System.in);
-        String command="";
-            do {
+        String command = "";
+        do {
             System.out.print(">");
+
             command = in.next();
-            if(command.equalsIgnoreCase("buy"))
-            {
+
+            if(command.equalsIgnoreCase("buy")) {
                 int qty = in.nextInt();
                 double price = in.nextDouble();
-
             }
-            else if(command.equals("sell"))
-            {
+
+            else if (command.equals("sell")) {
                 int qty = in.nextInt();
                 double price = in.nextDouble();
-
-
             }
-        }while(!command.equalsIgnoreCase("quit"));
+
+        } while (!command.equalsIgnoreCase("quit"));
     }
 }
