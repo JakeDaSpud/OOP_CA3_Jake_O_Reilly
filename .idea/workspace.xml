@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7023d99c-fb22-46a5-995a-4b6c5d900898" name="Changes" comment="Added name and class to questions">
-      <change afterPath="$PROJECT_DIR$/q10_image.png" afterDir="false" />
+    <list default="true" id="7023d99c-fb22-46a5-995a-4b6c5d900898" name="Changes" comment="- Added image to doc&#10;- Did q1&#10;- Started q2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Questions.md" beforeDir="false" afterPath="$PROJECT_DIR$/Questions.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Todo.md" beforeDir="false" afterPath="$PROJECT_DIR$/Todo.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CA3_Question1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CA3_Question1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CA3_Question2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CA3_Question2.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,33 +36,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/jaked/IdeaProjects/OOP_CA3_Jake_O_Reilly",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/jaked/IdeaProjects/OOP_CA3_Jake_O_Reilly&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\jaked\IdeaProjects\OOP_CA3_Jake_O_Reilly" />
       <recent name="C:\Users\jaked\IdeaProjects\OOP_CA3_Jake_O_Reilly\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.CA3_Question2">
+  <component name="RunManager" selected="Application.CA3_Question1">
     <configuration name="CA3_Question1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="CA3_Question1" />
       <module name="OOP_CA3_jake_oreilly" />
@@ -84,8 +79,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.CA3_Question2" />
         <item itemvalue="Application.CA3_Question1" />
+        <item itemvalue="Application.CA3_Question2" />
       </list>
     </recent_temporary>
   </component>
@@ -101,7 +96,15 @@
       <workItem from="1703817598311" duration="735000" />
       <workItem from="1703818446889" duration="408000" />
       <workItem from="1704288761735" duration="778000" />
-      <workItem from="1705851695309" duration="20372000" />
+      <workItem from="1705851695309" duration="20480000" />
+      <workItem from="1706041940854" duration="1251000" />
+      <workItem from="1706087723931" duration="1963000" />
+      <workItem from="1706198503907" duration="478000" />
+      <workItem from="1706266229767" duration="338000" />
+      <workItem from="1706267379141" duration="233000" />
+      <workItem from="1706267645588" duration="3155000" />
+      <workItem from="1706286651328" duration="1707000" />
+      <workItem from="1706521820190" duration="43000" />
     </task>
     <task id="LOCAL-00001" summary="Initialised project.">
       <option name="closed" value="true" />
@@ -143,7 +146,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703818821854</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="- Added image to doc&#10;- Did q1&#10;- Started q2">
+      <option name="closed" value="true" />
+      <created>1705882919692</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1705882919692</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -156,6 +167,7 @@
     <MESSAGE value="Added Questions and Todo" />
     <MESSAGE value="Renamed project" />
     <MESSAGE value="Added name and class to questions" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added name and class to questions" />
+    <MESSAGE value="- Added image to doc&#10;- Did q1&#10;- Started q2" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Added image to doc&#10;- Did q1&#10;- Started q2" />
   </component>
 </project>
