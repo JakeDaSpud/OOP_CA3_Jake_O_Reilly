@@ -49,6 +49,10 @@ public class CA3_Question5
                 }
             }
 
+            else {
+                System.out.println("error: command not recognised, nothing happened...");
+            }
+
         } while (!command.equalsIgnoreCase("quit"));
     }
 }
