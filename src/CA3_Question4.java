@@ -29,7 +29,8 @@ public class CA3_Question4 {
 
         while (fileIn.hasNext()) {
             tag = fileIn.next();
-            System.out.println("current Tag: "+tag);
+            //Debug print to see how the tag was being interpreted
+            //System.out.println("current Tag: "+tag);
 
             //adding opening tags to openTags, because they are open and haven't been closed yet (there is a future tag with / in it)
             if (isOpening(tag)) {
@@ -38,10 +39,12 @@ public class CA3_Question4 {
 
             //not opening, check if the peek() of openTags is the same as this tag, both ignoring case and without the "/" as second last character
             else {
-                System.out.println(tag);
+                //Debug print to see how the tag was being interpreted
+                //System.out.println(tag);
                 //get tag into non closing form (sin el /)
                 tag = "<" + tag.substring(2, tag.length());
-                System.out.println(tag);
+                //Debug print to see how the tag was being interpreted
+                //System.out.println(tag);
 
                 //tag is closing the previous tag, pop() it
                 if (tag.equalsIgnoreCase(openTags.peek())) {
