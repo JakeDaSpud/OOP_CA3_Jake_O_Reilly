@@ -6,7 +6,7 @@
 - [x] Q3 Logic
 - [ ] Q3 Implementation
 - [x] Q4 Logic
-- [ ] Q4 Implementation
+- [x] Q4 Implementation
 - [x] Q5 Logic
 - [x] Q5 Implementation
 - [x] Q6 Logic
