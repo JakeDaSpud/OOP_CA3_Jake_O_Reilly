@@ -77,35 +77,60 @@ public class CA3_Question6
                 //remove any negative sign, no quantity < 0!
                 int qty = Math.abs(in.nextInt());
                 double price = in.nextDouble();
+                double profit = 0, totalProfit = 0;
 
                 Block currentStock = ownedStocks.peek();
 
-                //if 0 or less amount, that stock is donezo, get it out of the queue
-                if (currentStock.getStockAmount() < 1) {
-                    ownedStocks.poll();
-                }
-
-                System.out.printf("Stock Attempting to be sold: Quantity[%d] Price[%f]\n", currentStock.getStockAmount(), currentStock.getPricePer1Stock());
-
-                if (currentStock.getStockAmount() >= qty) {
-                    double oldStockSum = currentStock.getPricePer1Stock() * qty;
-
-                    //sufficient stock amount, remove them and calculate the difference
-                    currentStock.setStockAmount(currentStock.getStockAmount() - qty);
-
-                    System.out.println("New stock quantity: " + currentStock.getStockAmount());
-
-                    System.out.println("Selling that stock earned you: " + ((qty * price) - oldStockSum));
+                //are there stocks?
+                if (ownedStocks.isEmpty()) {
+                    System.out.println("No stocks to sell.");
                 }
 
                 else {
-                    System.out.println("Not enough stocks to sell...");
+                    //stock still has more than 1+ left
+                    while (ownedStocks.peek().getStockAmount() > 0) {
+                        profit++;
+                        ownedStocks.peek().setStockAmount(ownedStocks.peek().getStockAmount() - 1);
+                    }
+
+                    //if there's another stock, bring it up in the queue
+                    if (ownedStocks.size() > 1) {
+                        ownedStocks.poll();
+                        System.out.println("DEBUG: queue polled, new ");
+                    }
                 }
+
+                //this code works but doesn't do the whole queue switching...
+                //there are stocks
+//                else {
+//                    System.out.printf("Stock Attempting to be sold: Quantity[%d] Price[%f]\n", currentStock.getStockAmount(), currentStock.getPricePer1Stock());
+//
+//                    if (currentStock.getStockAmount() >= qty) {
+//
+//                        double oldStockSum = currentStock.getPricePer1Stock() * qty;
+//
+//                        //sufficient stock amount, remove them and calculate the difference
+//                        currentStock.setStockAmount(currentStock.getStockAmount() - qty);
+//
+//                        System.out.println("New stock quantity: " + currentStock.getStockAmount());
+//
+//                        System.out.println("Selling that stock earned you: " + ((qty * price) - oldStockSum));
+//
+//                        //if 0 or less amount, that stock is donezo, get it out of the queue
+//                        if (currentStock.getStockAmount() < 1) {
+//                            ownedStocks.poll();
+//                        }
+//                    }
+//
+//                    else {
+//                        System.out.println("Not enough stocks to sell...");
+//                    }
+//                }
             }
 
             //minor error catching
             else {
-                System.out.println("Error: incorrect command format, nothing happened...");
+                System.out.println("\nError or Quit: incorrect command format, nothing happened...");
             }
 
         } while (!command.equalsIgnoreCase("quit"));

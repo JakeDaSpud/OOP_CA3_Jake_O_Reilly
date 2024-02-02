@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7023d99c-fb22-46a5-995a-4b6c5d900898" name="Changes" comment="- Added image to doc&#10;- Did q1&#10;- Started q2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CA3_Question3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CA3_Question3.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CA3_Question6.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CA3_Question6.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -136,7 +135,8 @@
       <workItem from="1706616354837" duration="5621000" />
       <workItem from="1706660541951" duration="17000" />
       <workItem from="1706692534943" duration="11162000" />
-      <workItem from="1706802109817" duration="5268000" />
+      <workItem from="1706802109817" duration="5391000" />
+      <workItem from="1706864459947" duration="3446000" />
     </task>
     <task id="LOCAL-00001" summary="Initialised project.">
       <option name="closed" value="true" />
