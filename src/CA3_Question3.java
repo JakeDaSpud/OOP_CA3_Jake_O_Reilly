@@ -85,8 +85,9 @@ public class CA3_Question3
     public static void main(String[] args) throws FileNotFoundException {
         mapWord_LineNumber("src/CA3_Question1.java", wordIndexLine_Map);
 
-        for (Map<String, Set<Integer>> item : wordIndexLine_Map.entrySet()) {
-            System.out.println(item);
-        }
+        //JAKE YOU WERE HERE THIS CAUSING ERRORS I AM TRYING TO DO Q6
+//        for (Map<String, Set<Integer>> item : wordIndexLine_Map.entrySet()) {
+//            System.out.println(item);
+//        }
     }
 }
