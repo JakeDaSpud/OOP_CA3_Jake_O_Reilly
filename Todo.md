@@ -10,7 +10,7 @@
 - [x] Q5 Logic
 - [x] Q5 Implementation
 - [x] Q6 Logic
-- [ ] Q6 Implementation
+- [x] Q6 Implementation
 - [ ] Q7 Logic
 - [ ] Q7 Implementation
 - [ ] Q8 Logic
