@@ -34,6 +34,11 @@ public class CA3_Question6
         public double getPricePer1Stock() {
             return PricePer1Stock;
         }
+
+        @Override
+        public String toString() {
+            return "{" + StockAmount + " at " + PricePer1Stock + "/stock}";
+        }
     }
 
     /*
@@ -51,6 +56,7 @@ public class CA3_Question6
 
         String command = "";
         do {
+            System.out.println("Total ownedStocks: " + ownedStocks + "\n");
             System.out.print("Enter BUY/SELL stock_quantity stock_price: ");
 
             command = in.next();
@@ -79,6 +85,7 @@ public class CA3_Question6
                 double price = in.nextDouble();
                 double profit = 0, totalProfit = 0;
 
+                //current stock being affected
                 Block currentStock = ownedStocks.peek();
 
                 //are there stocks?
@@ -86,46 +93,38 @@ public class CA3_Question6
                     System.out.println("No stocks to sell.");
                 }
 
-                else {
-                    //stock still has more than 1+ left
-                    while (ownedStocks.peek().getStockAmount() > 0) {
-                        profit++;
-                        ownedStocks.peek().setStockAmount(ownedStocks.peek().getStockAmount() - 1);
-                    }
-
-                    //if there's another stock, bring it up in the queue
-                    if (ownedStocks.size() > 1) {
-                        ownedStocks.poll();
-                        System.out.println("DEBUG: queue polled, new ");
-                    }
-                }
-
                 //this code works but doesn't do the whole queue switching...
                 //there are stocks
-//                else {
-//                    System.out.printf("Stock Attempting to be sold: Quantity[%d] Price[%f]\n", currentStock.getStockAmount(), currentStock.getPricePer1Stock());
-//
-//                    if (currentStock.getStockAmount() >= qty) {
-//
-//                        double oldStockSum = currentStock.getPricePer1Stock() * qty;
-//
-//                        //sufficient stock amount, remove them and calculate the difference
-//                        currentStock.setStockAmount(currentStock.getStockAmount() - qty);
-//
-//                        System.out.println("New stock quantity: " + currentStock.getStockAmount());
-//
-//                        System.out.println("Selling that stock earned you: " + ((qty * price) - oldStockSum));
-//
-//                        //if 0 or less amount, that stock is donezo, get it out of the queue
-//                        if (currentStock.getStockAmount() < 1) {
-//                            ownedStocks.poll();
-//                        }
-//                    }
-//
-//                    else {
-//                        System.out.println("Not enough stocks to sell...");
-//                    }
-//                }
+                else {
+                    while (qty > 0) {
+                        //System.out.printf("Stock Attempting to be sold: Quantity[%d] Price[%f]\n", currentStock.getStockAmount(), currentStock.getPricePer1Stock());
+                        //System.out.println("Amount left to sell: " + qty);
+
+                        //Get current cost of this stock
+                        double oldStockSum = currentStock.getPricePer1Stock() * qty;
+
+                        //Iterating to "next" stock
+                        currentStock.setStockAmount(currentStock.getStockAmount() - 1);
+                        qty--;
+
+                        profit = price - currentStock.getPricePer1Stock();
+                        System.out.println("Profit of that stock: " + profit);
+
+                        totalProfit += profit;
+
+                        //if 0 or less amount, that stock block is donezo, get it out of the queue
+                        if (currentStock.getStockAmount() < 1) {
+                            System.out.println("Moving to next block of stocks...");
+                            ownedStocks.poll();
+
+                            //need to set new currentStock
+                            currentStock = ownedStocks.peek();
+                        }
+                    }
+
+                    System.out.println("Total profit of that sell command: " + totalProfit);
+
+                }
             }
 
             //minor error catching
