@@ -1,21 +1,30 @@
 # To do 
 - [x] Q1 Logic
 - [x] Q1 Implementation
+-
 - [ ] Q2 Logic
 - [ ] Q2 Implementation
+- 
 - [x] Q3 Logic
 - [ ] Q3 Implementation
+- 
 - [x] Q4 Logic
 - [x] Q4 Implementation
+- 
 - [x] Q5 Logic
 - [x] Q5 Implementation
+- 
 - [x] Q6 Logic
 - [x] Q6 Implementation
-- [ ] Q7 Logic
-- [ ] Q7 Implementation
+- 
+- [x] Q7 Logic
+- [x] Q7 Implementation
+- 
 - [ ] Q8 Logic
 - [ ] Q8 Implementation
+- 
 - [x] Q9 Logic
 - [ ] Q9 Implementation
+- 
 - [ ] Q10 Logic
 - [ ] Q10 Implementation

@@ -1,17 +1,12 @@
 
-import java.util.ArrayDeque;
-import java.util.Map;
-import java.util.Queue;
-import java.util.Scanner;
+import java.util.*;
+
 /**
  *  Name: jake o'reilly
  *  Class Group: gd2a
  */
 public class CA3_Question7
 {
-
-    Map<String, Block>
-
     //Simple storage class for holding quantity of, and price per stock
     static class Block {
         int StockAmount;
@@ -52,6 +47,9 @@ public class CA3_Question7
     or
     quit
      */
+
+    static Map<String, Queue<Block>> company_BlockQueue_MAP = new HashMap<>();
+
     public static void main(String[] args) {
         //Block Queue for buying and selling Stocks
         Queue<Block> ownedStocks = new ArrayDeque<>();
@@ -59,8 +57,8 @@ public class CA3_Question7
 
         String command = "";
         do {
-            System.out.println("Total ownedStocks: " + ownedStocks + "\n");
-            System.out.print("Enter BUY/SELL stock_quantity stock_price: ");
+            System.out.println("Entire Map: " + company_BlockQueue_MAP + "\n");
+            System.out.print("Enter BUY/SELL company_name stock_quantity stock_price: ");
 
             command = in.next();
 
@@ -76,7 +74,19 @@ public class CA3_Question7
 
                 double price = Math.abs(in.nextDouble());
 
-                ownedStocks.offer(new Block(qty, price));
+                //the company is already in the Map, it has at least 1 stock queue in it
+                if (company_BlockQueue_MAP.containsKey(company)) {
+                    company_BlockQueue_MAP.get(company).offer(new Block(qty, price));
+                }
+
+                //the company is not in the Map, add a new entry
+                else {
+                    //new entry
+                    company_BlockQueue_MAP.put(company, new ArrayDeque<Block>());
+                    //adding the block of stocks to that company
+                    company_BlockQueue_MAP.get(company).offer(new Block(qty, price));
+                    System.out.println("Added new entry to Map: " + company_BlockQueue_MAP);
+                }
             }
 
             //selling stocks
@@ -92,10 +102,10 @@ public class CA3_Question7
                 double profit = 0, totalProfit = 0;
 
                 //current stock being affected
-                Block currentStock = ownedStocks.peek();
+                Block currentStock = company_BlockQueue_MAP.get(company).peek();
 
                 //are there stocks?
-                if (ownedStocks.isEmpty()) {
+                if (company_BlockQueue_MAP.get(company).isEmpty()) {
                     System.out.println("No stocks to sell.");
                 }
 
@@ -114,17 +124,17 @@ public class CA3_Question7
                         qty--;
 
                         profit = price - currentStock.getPricePer1Stock();
-                        System.out.println("Profit of that stock: " + profit);
+                        //System.out.println("Profit of that stock: " + profit);
 
                         totalProfit += profit;
 
                         //if 0 or less amount, that stock block is donezo, get it out of the queue
                         if (currentStock.getStockAmount() < 1) {
                             System.out.println("Moving to next block of stocks...");
-                            ownedStocks.poll();
+                            company_BlockQueue_MAP.get(company).poll();
 
                             //need to set new currentStock
-                            currentStock = ownedStocks.peek();
+                            currentStock = company_BlockQueue_MAP.get(company).peek();
                         }
                     }
 
