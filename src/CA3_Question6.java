@@ -108,13 +108,13 @@ public class CA3_Question6
                         qty--;
 
                         profit = price - currentStock.getPricePer1Stock();
-                        System.out.println("Profit of that stock: " + profit);
+                        //System.out.println("Profit of that stock: " + profit);
 
                         totalProfit += profit;
 
                         //if 0 or less amount, that stock block is donezo, get it out of the queue
                         if (currentStock.getStockAmount() < 1) {
-                            System.out.println("Moving to next block of stocks...");
+                            //System.out.println("Moving to next block of stocks...");
                             ownedStocks.poll();
 
                             //need to set new currentStock
