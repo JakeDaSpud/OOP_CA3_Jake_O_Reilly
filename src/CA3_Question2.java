@@ -68,19 +68,68 @@ public class CA3_Question2
             System.out.println();
         }
     }
-    private static void fill(int initialRow, int initialCol, int[][] arr) {
+    private static void fill(int currentRow, int currentCol, int[][] arr) {
         Stack<Pair> toFill = new Stack<>();
 
-        //Check North
+        //Starting currentPair value is the input
+        Pair currentPair = new Pair(currentRow, currentCol);
+        //Next pair checked to be added to stack
+        Pair checkingPair = new Pair(-1, -1);
+        int fillStage = 1;
 
+        for (int i = 1; i <= (10*10); i++) {
+            System.out.printf("On Fill Turn No. %d...\n", i);
 
-        //Check East
+            //set this number position in array to the fillStage number
+            arr[currentPair.getRow()][currentPair.getColumn()] = fillStage;
 
-        //Check South
+            //Check North: row - 1
+            if (currentPair.getRow() > 0) {
+                checkingPair = new Pair(currentPair.getRow() - 1, currentPair.getColumn());
 
-        //Check West
+                if (arr[checkingPair.getRow()][checkingPair.getColumn()] == 0) {
+                    toFill.push(checkingPair);
+                    System.out.println("Added Pair at " + checkingPair);
+                }
+            }
 
-        display(arr);
+            //Check East: col + 1
+            if (currentPair.getColumn() < 9) {
+                checkingPair = new Pair(currentPair.getRow(), currentPair.getColumn() + 1);
+
+                if (arr[checkingPair.getRow()][checkingPair.getColumn()] == 0) {
+                    toFill.push(checkingPair);
+                    System.out.println("Added Pair at " + checkingPair);
+                }
+            }
+
+            //Check South: row + 1
+            if (currentPair.getRow() < 9) {
+                checkingPair = new Pair(currentPair.getRow() + 1, currentPair.getColumn());
+
+                if (arr[checkingPair.getRow()][checkingPair.getColumn()] == 0) {
+                    toFill.push(checkingPair);
+                    System.out.println("Added Pair at " + checkingPair);
+                }
+            }
+
+            //Check West: col - 1
+            if (currentPair.getColumn() > 0) {
+                checkingPair = new Pair(currentPair.getRow(), currentPair.getColumn() - 1);
+
+                if (arr[checkingPair.getRow()][checkingPair.getColumn()] == 0) {
+                    toFill.push(checkingPair);
+                    System.out.println("Added Pair at " + checkingPair);
+                }
+            }
+
+            System.out.println("Stack: " + toFill);
+            display(arr);
+
+            fillStage++;
+            currentPair = toFill.pop();
+        }
+
     }
 
     public static void start() {
