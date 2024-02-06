@@ -2,11 +2,11 @@
 - [x] Q1 Logic
 - [x] Q1 Implementation
 -
-- [ ] Q2 Logic
+- [x] Q2 Logic
 - [ ] Q2 Implementation
 - 
 - [x] Q3 Logic
-- [ ] Q3 Implementation
+- [x] Q3 Implementation
 - 
 - [x] Q4 Logic
 - [x] Q4 Implementation
@@ -20,7 +20,7 @@
 - [x] Q7 Logic
 - [x] Q7 Implementation
 - 
-- [ ] Q8 Logic
+- [x] Q8 Logic
 - [ ] Q8 Implementation
 - 
 - [x] Q9 Logic
