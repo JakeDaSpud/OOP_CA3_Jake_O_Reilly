@@ -3,7 +3,7 @@
 - [x] Q1 Implementation
 -
 - [x] Q2 Logic
-- [ ] Q2 Implementation
+- [x] Q2 Implementation
 - 
 - [x] Q3 Logic
 - [x] Q3 Implementation
