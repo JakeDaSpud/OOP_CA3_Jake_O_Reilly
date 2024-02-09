@@ -1,3 +1,6 @@
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Scanner;
 import java.util.Stack;
 
@@ -12,49 +15,104 @@ public class CA3_Question8 {
      */
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        Stack<Integer> numberStack = new Stack<>();
+        Stack<Double> numberStack = new Stack<>();
+        Stack<Character> operatorStack = new Stack<>();
+
         String equation;
 
-        System.out.println("Please enter equation: ");
+        System.out.println("Example Equation: ( 3 + 5 )");
+        System.out.println("Please enter equation with space between each character: ");
         equation = in.nextLine().trim();
+        System.out.println("Equation: " + equation);
 
-        //found regex for integer: "\\d+"
-        //link: https://stackoverflow.com/questions/16331423/whats-the-java-regular-expression-for-an-only-integer-numbers-string
-        if (equation.matches("\\d+")) {
-            //convert to int, push to stack
-            numberStack.push(Integer.parseInt(equation));
+        //regex taken from Q3, modified to include */+()-
+        String[] splitEquation = equation.split("[^A-Za-z0-9_*/+()-]");
+        System.out.println("splitEquation = ");
+        for (String s : splitEquation) {
+            System.out.println(s);
         }
 
-        //found site that lets me generate regex
-        //link: https://regex-generator.olafneumann.org/?sampleText=%2B-*%2F&flags=i
-        else if (equation.matches("\\+-\\*/")) {
+
+        for (int i = 0; i < splitEquation.length; i++) {
+
+            //found regex for integer: "\\d+" / .matches("\\d+")
+            //link: https://stackoverflow.com/questions/16331423/whats-the-java-regular-expression-for-an-only-integer-numbers-string
+            if (splitEquation[i].matches("\\d+")) {
+                System.out.println("Int found in equation: " + splitEquation[i]);
+
+                //convert to int (double, for division compatibility), push to stack
+                numberStack.push(Double.parseDouble(splitEquation[i]));
+                System.out.println("STATE NumberStack: " + numberStack);
+            }
+
+            //found site that lets me generate regex
+            //link: https://regex-generator.olafneumann.org/?sampleText=%2B-*%2F&flags=i
+            else {
+                System.out.println("Operator found: " + splitEquation[i]);
+
+                operatorStack.push(splitEquation[i].charAt(0));
+                System.out.println("STATE OperatorStack: " + operatorStack);
+
+
+                System.out.println("NumberStack: " + numberStack);
+            }
+        }
+
+        System.out.println("Now solving...");
+
+        //numberStack.sort(Comparator.reverseOrder());
+        while (numberStack.size() != 1) {
+
+
             //take two most recent numbers
-            int x = numberStack.pop();
-            int y = numberStack.pop();
-            int result = 0;
+            double y = numberStack.pop();
+            double x = numberStack.pop();
+            double result = 0;
 
-            if (equation.equals("+")) {
-                System.out.println("Adding...");
-                result = x + y;
+            //ORDERING: BIMDAS
+            //brackets
+            if (operatorStack.peek() == '(') {
+                System.out.println("Opening Parentheses??...");
+                operatorStack.pop();
             }
 
-            else if (equation.equals("-")) {
-                System.out.println("Subtracting...");
-                result = x - y;
+            else if (operatorStack.peek() == ')') {
+                System.out.println("Closing Parentheses??...");
+                operatorStack.pop();
             }
 
-            else if (equation.equals("*")) {
+            //multiplication
+            else if (operatorStack.peek() == '*') {
                 System.out.println("Multiplying...");
                 result = x * y;
+                operatorStack.pop();
             }
 
-            else if (equation.equals("/")) {
+            //division
+            else if (operatorStack.peek() == '/') {
                 System.out.println("Dividing...");
                 result = x / y;
+                operatorStack.pop();
+            }
+
+            //addition
+            else if (operatorStack.peek() == '+') {
+                System.out.println("Adding...");
+                result = x + y;
+                operatorStack.pop();
+            }
+
+            //subtraction
+            else if (operatorStack.peek() == '-') {
+                System.out.println("Subtracting...");
+                result = x - y;
+                operatorStack.pop();
             }
 
             numberStack.push(result);
         }
+
+        System.out.println("Final STATE NumberStack: " + numberStack);
 
         System.out.println("Result: " + numberStack.peek());
     }

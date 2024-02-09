@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7023d99c-fb22-46a5-995a-4b6c5d900898" name="Changes" comment="- Added image to doc&#10;- Did q1&#10;- Started q2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Todo.md" beforeDir="false" afterPath="$PROJECT_DIR$/Todo.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CA3_Question8.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CA3_Question8.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,6 +44,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last.edited.regexp&quot;: &quot;&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/jaked/IdeaProjects/OOP_CA3_Jake_O_Reilly&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -139,7 +139,11 @@
       <workItem from="1706802109817" duration="5391000" />
       <workItem from="1706864459947" duration="5117000" />
       <workItem from="1707062645758" duration="17537000" />
-      <workItem from="1707226429767" duration="21708000" />
+      <workItem from="1707226429767" duration="21810000" />
+      <workItem from="1707304514070" duration="8958000" />
+      <workItem from="1707326887041" duration="2518000" />
+      <workItem from="1707410167680" duration="1187000" />
+      <workItem from="1707496804624" duration="4249000" />
     </task>
     <task id="LOCAL-00001" summary="Initialised project.">
       <option name="closed" value="true" />
@@ -211,6 +215,10 @@
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.util.NoSuchElementException" package="java.util" />
           <option name="timeStamp" value="1" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.util.EmptyStackException" package="java.util" />
+          <option name="timeStamp" value="2" />
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
