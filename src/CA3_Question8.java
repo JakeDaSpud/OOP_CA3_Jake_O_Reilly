@@ -1,8 +1,5 @@
 import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.Scanner;
-import java.util.Stack;
+import java.util.*;
 
 /**
  *  Name: jake o'reilly
@@ -20,7 +17,7 @@ public class CA3_Question8 {
 
         String equation;
 
-        System.out.println("Example Equation: ( 3 + 5 )");
+        System.out.println("Example Equation: 4 * ( 3 + 5 )");
         System.out.println("Please enter equation with space between each character: ");
         equation = in.nextLine().trim();
         System.out.println("Equation: " + equation);
@@ -49,71 +46,86 @@ public class CA3_Question8 {
             //link: https://regex-generator.olafneumann.org/?sampleText=%2B-*%2F&flags=i
             else {
                 System.out.println("Operator found: " + splitEquation[i]);
-
                 operatorStack.push(splitEquation[i].charAt(0));
-                System.out.println("STATE OperatorStack: " + operatorStack);
 
+                //while inside ()
+                if (splitEquation[i].charAt(0) == ')') {
+                    System.out.println("Closing Parenthesis found... ");
+                    while (!operatorStack.isEmpty() && operatorStack.peek() != ')') {
+                        solveStacks(numberStack, operatorStack);
+                    }
+                }
 
-                System.out.println("NumberStack: " + numberStack);
+                printStacks(numberStack, operatorStack);
             }
         }
 
         System.out.println("Now solving...");
 
         //numberStack.sort(Comparator.reverseOrder());
-        while (numberStack.size() != 1) {
+        solveStacks(numberStack, operatorStack);
 
+        System.out.println("Final STATE NumberStack: " + numberStack);
+
+        System.out.println("Result: " + numberStack.peek());
+    }
+
+    public static void solveStacks(Stack<Double> numberStack, Stack<Character> operatorStack) {
+        //while not (?: because
+        while (!operatorStack.isEmpty() && numberStack.size() > 1 && operatorStack.peek() != '(') {
 
             //take two most recent numbers
             double y = numberStack.pop();
             double x = numberStack.pop();
             double result = 0;
+            char operator = operatorStack.pop();
 
-            //ORDERING: BIMDAS
-            //brackets
-            if (operatorStack.peek() == '(') {
-                System.out.println("Opening Parentheses??...");
-                operatorStack.pop();
+            //ORDERING: BIM*D/A+S-
+
+            //made into switch case
+            switch (operator) {
+                case '*':
+                    System.out.printf("Multiplying %f and %f\n", x, y);
+                    result = x * y;
+                    break;
+
+                case '/':
+                    System.out.printf("Dividing %f and %f\n", x, y);
+                    result = x / y;
+                    break;
+
+                case '+':
+                    System.out.printf("Adding %f and %f\n", x, y);
+                    result = x + y;
+                    break;
+
+                case '-':
+                    System.out.printf("Subtracting %f and %f\n", x, y);
+                    result = x - y;
+                    break;
+
+                default:
+                    System.out.println("Operator not 1 of 4 normal ones.");
+                    break;
             }
 
-            else if (operatorStack.peek() == ')') {
-                System.out.println("Closing Parentheses??...");
-                operatorStack.pop();
-            }
-
-            //multiplication
-            else if (operatorStack.peek() == '*') {
-                System.out.println("Multiplying...");
-                result = x * y;
-                operatorStack.pop();
-            }
-
-            //division
-            else if (operatorStack.peek() == '/') {
-                System.out.println("Dividing...");
-                result = x / y;
-                operatorStack.pop();
-            }
-
-            //addition
-            else if (operatorStack.peek() == '+') {
-                System.out.println("Adding...");
-                result = x + y;
-                operatorStack.pop();
-            }
-
-            //subtraction
-            else if (operatorStack.peek() == '-') {
-                System.out.println("Subtracting...");
-                result = x - y;
-                operatorStack.pop();
-            }
+            //pop the operator when not ( or )
+            operatorStack.pop();
+            System.out.println("Removing top operator of operatorStack");
 
             numberStack.push(result);
+
+            printStacks(numberStack, operatorStack);
         }
 
-        System.out.println("Final STATE NumberStack: " + numberStack);
+        //this is popping the ( when we're done the brackets
+        if (!operatorStack.isEmpty() && operatorStack.peek() == '(') {
+            operatorStack.pop();
+        }
+    }
 
-        System.out.println("Result: " + numberStack.peek());
+    public static void printStacks(Stack<Double> nums, Stack<Character> ops) {
+        System.out.println("NumberStack: " + nums);
+        System.out.println("OperatorStack: " + ops);
     }
 }
