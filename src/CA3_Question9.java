@@ -6,7 +6,7 @@
 /*
 Direction enum used to indicate direction.
  */
-enum DIRECTION {NORTH, SOUTH,EAST,WEST};
+enum DIRECTION {NORTH,SOUTH,EAST,WEST};
 
 public class CA3_Question9
 {
@@ -47,10 +47,61 @@ public class CA3_Question9
             }
             System.out.println();
         }
+
+        System.out.println();
     }
 
-    public void solve(int x, int y, DIRECTION dir) {
-        //while ()
+    public static void solve(Player player, int[][] maze, DIRECTION dir) {
+        boolean mazeSolved = false;
+        int globalCounter = 0;
+
+        System.out.println("Maze Size: " + maze.length);
+        System.out.println("Player Starting Position: " + player.getX() + ", " + player.getY());
+
+        if (!isValidPlayer(player, maze)) {
+            System.out.println("Invalid Player Position Error.");
+        }
+
+        //while player x != 0 || maze.length && player y != 0 || maze.length
+        while (!mazeSolved) {
+
+            //check north
+
+
+            //check east
+
+            //check south
+
+            //check west
+
+            display(maze);
+            System.out.printf("--= Step %d =--\n", globalCounter);
+            globalCounter++;
+
+            //this just means the player isn't in an edge position, which would be the exit to the maze
+            if ((player.getX() == 0 || player.getX() == maze.length) || (player.getY() == 0 || player.getY() == maze.length)) {
+                System.out.println("Maze solved.");
+                mazeSolved = !mazeSolved;
+            }
+        }
+    }
+
+    public static boolean isValidPlayer(Player player, int[][] maze) {
+        if (player.getX() < 0 || player.getY() < 0 || player.getX() > maze.length || player.getY() > maze.length) {
+            System.out.println("Invalid: Player is starting outside of maze...");
+            return false;
+        }
+
+        for (int x = 0; x < maze.length; x++) {
+            for (int y = 0; y < maze.length; y++) {
+                if (maze[x][y] != 0) {
+                    System.out.println("Invalid: Player is starting on a maze wall...");
+                    return false;
+                }
+            }
+        }
+
+        return true;
     }
 
     public static void setupMaze(int[][] maze) {
@@ -68,10 +119,11 @@ public class CA3_Question9
 
     public static void main(String[] args) {
         int[][] theMaze = new int[8][8];
-        Player player = new Player(3, 4);
+        Player player = new Player(4, 3);
+        DIRECTION dir = DIRECTION.NORTH;
 
         setupMaze(theMaze);
 
-        display(theMaze);
+        solve(player, theMaze, dir);
     }
 }
