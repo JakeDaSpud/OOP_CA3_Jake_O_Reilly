@@ -50,15 +50,28 @@ public class CA3_Question9
     }
 
     public void solve(int x, int y, DIRECTION dir) {
-        Player player = new Player(1, 1);
         //while ()
     }
 
-    public void setupMaze(int[][] maze) {
+    public static void setupMaze(int[][] maze) {
+        int wall = -11;
 
+        maze[0][0] = wall; maze[0][1] = wall; maze[0][2] = wall; maze[0][3] = wall; maze[0][4] = wall; maze[0][5] = wall; maze[0][6] = wall; maze[0][7] = wall;
+        maze[1][0] = wall; maze[1][7] = wall;
+        maze[2][0] = wall; maze[2][1] = wall; maze[2][2] = wall; maze[2][3] = wall; maze[2][5] = wall; maze[2][6] = wall; maze[2][7] = wall;
+        maze[3][7] = wall;
+        maze[4][0] = wall; maze[4][1] = wall; maze[4][2] = wall; maze[4][3] = wall; maze[4][5] = wall; maze[4][6] = wall; maze[4][7] = wall;
+        maze[5][0] = wall; maze[5][5] = wall; maze[5][6] = wall; maze[5][7] = wall;
+        maze[6][0] = wall; maze[6][1] = wall; maze[6][2] = wall; maze[6][3] = wall; maze[6][5] = wall; maze[6][6] = wall; maze[6][7] = wall;
+        maze[7][0] = wall; maze[7][1] = wall; maze[7][2] = wall; maze[7][3] = wall; maze[7][4] = wall; maze[7][5] = wall; maze[7][6] = wall; maze[7][7] = wall;
     }
 
     public static void main(String[] args) {
-        display(new int[7][7]);
+        int[][] theMaze = new int[8][8];
+        Player player = new Player(3, 4);
+
+        setupMaze(theMaze);
+
+        display(theMaze);
     }
 }
