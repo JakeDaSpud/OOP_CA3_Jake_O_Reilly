@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7023d99c-fb22-46a5-995a-4b6c5d900898" name="Changes" comment="- Added image to doc&#10;- Did q1&#10;- Started q2">
+      <change afterPath="$PROJECT_DIR$/Q10_CityCityWeight_Data.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CA3_Question9.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CA3_Question9.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Todo.md" beforeDir="false" afterPath="$PROJECT_DIR$/Todo.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CA3_Question10.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CA3_Question10.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +66,14 @@
       <recent name="C:\Users\jaked\IdeaProjects\OOP_CA3_Jake_O_Reilly\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.CA3_Question9">
+  <component name="RunManager" selected="Application.CA3_Question10">
+    <configuration name="CA3_Question10" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="CA3_Question10" />
+      <module name="OOP_CA3_jake_oreilly" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="CA3_Question2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="CA3_Question2" />
       <module name="OOP_CA3_jake_oreilly" />
@@ -74,13 +83,6 @@
     </configuration>
     <configuration name="CA3_Question3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="CA3_Question3" />
-      <module name="OOP_CA3_jake_oreilly" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CA3_Question7" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="CA3_Question7" />
       <module name="OOP_CA3_jake_oreilly" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -102,11 +104,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.CA3_Question10" />
         <item itemvalue="Application.CA3_Question9" />
         <item itemvalue="Application.CA3_Question8" />
         <item itemvalue="Application.CA3_Question2" />
         <item itemvalue="Application.CA3_Question3" />
-        <item itemvalue="Application.CA3_Question7" />
       </list>
     </recent_temporary>
   </component>
@@ -149,7 +151,7 @@
       <workItem from="1707591635290" duration="24000" />
       <workItem from="1707603605868" duration="4128000" />
       <workItem from="1707640757598" duration="4724000" />
-      <workItem from="1707686238517" duration="11324000" />
+      <workItem from="1707686238517" duration="16190000" />
     </task>
     <task id="LOCAL-00001" summary="Initialised project.">
       <option name="closed" value="true" />

@@ -21,10 +21,10 @@
 - [x] Q7 Implementation
 - 
 - [x] Q8 Logic
-- [ ] Q8 Implementation
+- [x] Q8 Implementation
 - 
 - [x] Q9 Logic
-- [ ] Q9 Implementation
+- [x] Q9 Implementation
 - 
-- [ ] Q10 Logic
-- [ ] Q10 Implementation
+- [x] Q10 Logic
+- [x] Q10 Implementation
