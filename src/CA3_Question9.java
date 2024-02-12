@@ -10,7 +10,7 @@ import java.util.Stack;
 /*
 Direction enum used to indicate direction.
  */
-enum DIRECTION {NORTH,SOUTH,EAST,WEST};
+enum DIRECTION {NORTH, SOUTH, EAST, WEST};
 
 public class CA3_Question9
 {
@@ -74,6 +74,15 @@ public class CA3_Question9
         public void setDirection(DIRECTION direction) {
             this.direction = direction;
         }
+
+        @Override
+        public String toString() {
+            return "XYD[" +
+                    "x:" + x +
+                    ", y:" + y +
+                    ", dir:" + direction +
+                    "]";
+        }
     }
 
     public static void display(int[][] image) {
@@ -92,13 +101,16 @@ public class CA3_Question9
     public static void solve(Player player, int[][] maze, DIRECTION dir) {
         boolean mazeSolved = false;
         int globalCounter = 1;
-        Stack<XYDPair> nextInstructionsToFollow = new Stack<>();
+        Stack<XYDPair> nextMovesStack = new Stack<>();
+        Set<XYDPair> nonRepeatableMovesSet = new HashSet<>();
 
         System.out.println("Maze Size: " + maze.length);
         System.out.println("Player Starting Position: " + player.getX() + ", " + player.getY());
 
         if (!isValidPlayer(player, maze)) {
             System.out.println("Invalid Player Position Error.");
+            System.out.println("Get walled...");
+            System.exit(-11);
         }
 
         //while player x != 0 || maze.length && player y != 0 || maze.length
@@ -106,32 +118,16 @@ public class CA3_Question9
             maze[player.getY()][player.getX()] = 999;
 
             display(maze);
+
+            //reset where player was, not there anymore
+            maze[player.getY()][player.getX()] = 0;
+
+            //leave a marker that player has been on that tile
+            //maze[player.getY()][player.getX()] = 3;
+
             System.out.printf("--= Step %d =--\n", globalCounter);
 
-            //stack adding phase
-            //check north -y,   if 0, add to stack
-            if (maze[player.getY() - 1][player.getX()] == 0) {
-                System.out.println("North is traversable, adding to Stack.");
-                nextInstructionsToFollow.push(new XYDPair(player.getX(), player.getY() - 1, DIRECTION.NORTH));
-            }
-
-            //check east +x,    if 0, add to stack
-            if (maze[player.getY()][player.getX() + 1] == 0) {
-                System.out.println("East is traversable, adding to Stack.");
-                nextInstructionsToFollow.push(new XYDPair(player.getX() + 1, player.getY(), DIRECTION.EAST));
-            }
-
-            //check south +y,   if 0, add to stack
-            if (maze[player.getY() + 1][player.getX()] == 0) {
-                System.out.println("South is traversable, adding to Stack.");
-                nextInstructionsToFollow.push(new XYDPair(player.getX(), player.getY() + 1, DIRECTION.SOUTH));
-            }
-
-            //check west -x,    if 0, add to stack
-            if (maze[player.getY()][player.getX() - 1] == 0) {
-                System.out.println("West is traversable, adding to Stack.");
-                nextInstructionsToFollow.push(new XYDPair(player.getX() - 1, player.getY(), DIRECTION.WEST));
-            }
+            checkNESWAndAdd(player, maze, nextMovesStack, nonRepeatableMovesSet);
 
             globalCounter++;
 
@@ -140,7 +136,124 @@ public class CA3_Question9
                 System.out.printf("Maze solved in %d steps.\n", globalCounter);
                 mazeSolved = !mazeSolved;
             }
+
+            //traversal phase
+            if (!nextMovesStack.isEmpty()) {
+                XYDPair nextMove = nextMovesStack.pop();
+                nonRepeatableMovesSet.add(nextMove);
+                System.out.println("Next move is " + nextMove);
+
+
+                //if next is north, keep going while north is 0
+                if (nextMove.getDirection() == DIRECTION.NORTH) {
+                    while (maze[player.getY() - 1][player.getX()] == 0) {
+                        //move north one
+                        player.setY(player.getY() - 1);
+                        System.out.println("moved one north, now at " + player.getX() + " " + player.getY());
+                    }
+                }
+
+                //if next is east, keep going while east is 0
+                else if (nextMove.getDirection() == DIRECTION.EAST) {
+                    while (maze[player.getY()][player.getX() + 1] == 0) {
+                        //move east one
+                        player.setX(player.getX() + 1);
+                        System.out.println("moved one east, now at " + player.getX() + " " + player.getY());
+                    }
+                }
+
+                //if next is south, keep going while south is 0
+                else if (nextMove.getDirection() == DIRECTION.SOUTH) {
+                    while (maze[player.getY() + 1][player.getX()] == 0) {
+                        //move south one
+                        player.setY(player.getY() + 1);
+                        System.out.println("moved one south, now at " + player.getX() + " " + player.getY());
+                    }
+                }
+
+                //if next is west, keep going while west is 0
+                else if (nextMove.getDirection() == DIRECTION.WEST) {
+                    if (maze[player.getY()][player.getX() - 1] == 0) {
+                        //move west one
+                        player.setX(player.getX() - 1);
+                        System.out.println("moved one west, now at " + player.getX() + " " + player.getY());
+                    }
+                }
+
+                System.out.println("adjAvailTiles west of me: " + adjAvailableTiles(player, maze, nextMove));
+                System.out.println("Old moves: " + nonRepeatableMovesSet);
+
+            } else {
+                System.out.println("No more directions to go...");
+            }
         }
+    }
+
+    //logic to check all adjacent tiles to player and then add commands to stack
+    public static void checkNESWAndAdd(Player player, int[][] maze, Stack<XYDPair> nextMoves, Set<XYDPair> oldMoves) {
+        //stack adding phase
+        //check west -x,    if 0, add to stack
+        if (maze[player.getY()][player.getX() - 1] == 0) {
+            System.out.println("West is traversable, trying to add to Stack.");
+
+            if (!oldMoves.contains(new XYDPair(player.getX(), player.getY(), DIRECTION.WEST))) {
+                nextMoves.push(new XYDPair(player.getX(), player.getY(), DIRECTION.WEST));
+            } else {System.out.println("Not added. Move has been done already.");}
+        }
+
+        //check south +y,   if 0, add to stack
+        if (maze[player.getY() + 1][player.getX()] == 0) {
+            System.out.println("South is traversable, trying to add to Stack.");
+
+            if (!oldMoves.contains(new XYDPair(player.getX(), player.getY(), DIRECTION.SOUTH))) {
+                nextMoves.push(new XYDPair(player.getX(), player.getY(), DIRECTION.SOUTH));
+            } else {System.out.println("Not added. Move has been done already.");}
+        }
+
+        //check east +x,    if 0, add to stack
+        if (maze[player.getY()][player.getX() + 1] == 0) {
+            System.out.println("East is traversable, trying to add to Stack.");
+
+            if (!oldMoves.contains(new XYDPair(player.getX(), player.getY(), DIRECTION.EAST))) {
+                nextMoves.push(new XYDPair(player.getX(), player.getY(), DIRECTION.EAST));
+            } else {System.out.println("Not added. Move has been done already.");}
+        }
+
+        //check north -y,   if 0, add to stack
+        if (maze[player.getY() - 1][player.getX()] == 0) {
+            System.out.println("North is traversable, trying to add to Stack.");
+
+            if (!oldMoves.contains(new XYDPair(player.getX(), player.getY(), DIRECTION.NORTH))) {
+                nextMoves.push(new XYDPair(player.getX(), player.getY(), DIRECTION.NORTH));
+            } else {System.out.println("Not added. Move has been done already.");}
+        }
+    }
+
+    //takes in nextMove to know which direction's tile availability to ignore (the one we're coming from)
+    public static int adjAvailableTiles(Player player, int[][] maze, XYDPair nextMove) {
+        int adjOpenTiles = 0;
+
+        if (nextMove.getDirection() == DIRECTION.WEST && maze[player.getY()][player.getX() - 1] == 0) {
+            System.out.println("West is open");
+            adjOpenTiles++;
+        }
+
+        if (nextMove.getDirection() == DIRECTION.SOUTH && maze[player.getY() + 1][player.getX()] == 0) {
+            System.out.println("South is open");
+            adjOpenTiles++;
+        }
+
+        if (nextMove.getDirection() == DIRECTION.EAST && maze[player.getY()][player.getX() + 1] == 0) {
+            System.out.println("East is open");
+            adjOpenTiles++;
+        }
+
+        if (nextMove.getDirection() == DIRECTION.NORTH && maze[player.getY() - 1][player.getX()] == 0) {
+            System.out.println("North is open");
+            adjOpenTiles++;
+        }
+
+        return adjOpenTiles;
     }
 
     public static boolean isValidPlayer(Player player, int[][] maze) {
